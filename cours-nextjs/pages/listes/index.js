@@ -9,7 +9,7 @@ export default function listes(props) {
             {
               props.array.map(item =>(
                   <li key={uuidv4()}>
-                  <Link href={Object.keys(item)[0]}>{Object.keys(item)[0]}</Link>
+                  <Link href={`/listes/${item.name}`}>{item.name}</Link>
                   </li>
                  ))}
                     </ul>

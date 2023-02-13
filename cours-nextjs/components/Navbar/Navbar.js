@@ -10,6 +10,9 @@ export default function Navbar() {
         <Link href="/blog">
             <li>Blog</li>
         </Link>
+        <Link href="/cours">
+            <li>Bitcoin</li>
+        </Link>
         <Link href="/listes/">
             <li>Listes</li>
         </Link>
