@@ -10,6 +10,9 @@ export default function Navbar() {
         <Link href="/blog">
             <li>Blog</li>
         </Link>
+        <Link href="/listes/">
+            <li>Listes</li>
+        </Link>
         <Link href="/contact">
             <li>Contact</li>
         </Link>
