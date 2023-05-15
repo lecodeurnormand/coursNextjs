@@ -143,3 +143,9 @@
     filter: invert(1);
   }
 }
+
+.formulaire{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}

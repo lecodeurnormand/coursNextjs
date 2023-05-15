@@ -19,6 +19,10 @@ export default function Navbar() {
         <Link href="/contact">
             <li>Contact</li>
         </Link>
+        <Link href="/add">
+            <li>Add</li>
+        </Link>
     </nav>
   )
 }
+rcf

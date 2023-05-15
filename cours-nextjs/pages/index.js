@@ -3,12 +3,31 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { v4 as uuidv4 } from 'uuid';
 import { redirect } from 'next/dist/server/api-utils';
+import { useEffect, useState } from 'react';
 
 export default function Home(props) {
   const uuidv9 = require('uuid');
-  console.log(uuidv9)
+
+  const [state,setState] = useState(false)
+  
+  useEffect(()=>{
+    newWord()
+  },[])
+  const newWord = () =>{
+    fetch('/api/vocapi')
+    .then(response => response.json())
+    .then(data => setState(data))
+  }
 
   const id = "article"
+
+
+  let randomWord;
+  if(state){
+    const array = state.englishList[0].data;
+    randomWord = array[Math.floor(Math.random() * array.length)].en;
+  }
+  console.log(randomWord)
   return (
     <>
     <Head>
@@ -17,7 +36,7 @@ export default function Home(props) {
   <title>Titre</title>
     </Head>
     <div className={styles.container}>
-      <table className={styles.tableau}>
+      {/* <table className={styles.tableau}>
         <tbody>
           {props.array.map(el =>(
             <tr>
@@ -26,7 +45,11 @@ export default function Home(props) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
+      <button
+      onClick={newWord}
+      >Random</button>
+      <h2>{randomWord}</h2>
     </div>
     </>
   )
